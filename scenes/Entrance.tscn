@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/1bitpack_kenney_1.1/Arrows.tres" type="TileSet" id=1]
 [ext_resource path="res://src/1bitpack_kenney_1.1/Tilesheet/monochrome_transparent_packed.png" type="Texture" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://src/edited_sprites/destinationMarker.png" type="Texture" id=4]
 [ext_resource path="res://scenes/Entrance.gd" type="Script" id=5]
 [ext_resource path="res://src/edited_sprites/heartEmpty.png" type="Texture" id=6]
-[ext_resource path="res://src/edited_sprites/heartFull.png" type="Texture" id=7]
+[ext_resource path="res://src/edited_sprites/heartNoBorders.png" type="Texture" id=7]
 [ext_resource path="res://scenes/HealthBar.gd" type="Script" id=8]
 [ext_resource path="res://scenes/Mob.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Mob.gd" type="Script" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -80,6 +81,9 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
 [node name="Entrance" type="Node2D"]
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1024.0
@@ -123,20 +127,43 @@ speed = 200
 position = Vector2( 512, 320 )
 
 [node name="HealthBar" type="TextureProgress" parent="."]
-margin_left = 112.0
-margin_top = 496.0
-margin_right = 128.0
-margin_bottom = 512.0
+margin_left = 96.0
+margin_top = 480.0
+margin_right = 112.0
+margin_bottom = 496.0
 rect_scale = Vector2( 2, 2 )
 value = 100.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 7 )
 fill_mode = 5
+tint_under = Color( 0.388235, 0, 0, 1 )
+tint_progress = Color( 0.835294, 0.121569, 0.121569, 1 )
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UrDead" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 336.0
+margin_top = 240.0
+margin_right = 456.0
+margin_bottom = 271.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 15.956 )
+text = "YOU ARE DEAD
+NOT BIG SURPRISE"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Mob" parent="." instance=ExtResource( 9 )]
 position = Vector2( 208, 216 )
+script = ExtResource( 10 )
 [connection signal="hit" from="Player" to="HealthBar" method="_on_Player_hit"]
