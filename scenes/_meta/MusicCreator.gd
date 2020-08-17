@@ -4,12 +4,12 @@
 extends Node2D
 
 var music = [] # music that is beging created
-var state = "" # recording / playing
+var recording = false # recording / playing
 var miss = 0
 var points = 0
 
 func _process(delta):
-	if state == "recording":
+	if recording:
 		record()
 	$Score.text = str(points)
 	$Miss.text = str(miss)
@@ -43,7 +43,7 @@ func record():
 	$JsonResult.text = JSON.print(music)
 
 func _on_RecordNew_pressed():
-	state = "recording"
+	recording = true
 	music = []
 	$AudioStreamPlayer2D.play(0)
 
@@ -51,10 +51,10 @@ func _on_Copy_pressed():
 	OS.clipboard = $JsonResult.text
 
 func _on_Play_pressed():
+	recording = false
 	$AudioStreamPlayer2D.stop()
-	$MusicPlayer.music_json = $JsonResult.text
+	$MusicPlayer.music_jsons = [$JsonResult.text]
 	$MusicPlayer.play()
-
 
 func _on_MusicPlayer_hit():
 	points += 1

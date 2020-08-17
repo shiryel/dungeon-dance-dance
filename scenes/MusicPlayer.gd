@@ -4,7 +4,7 @@ signal miss
 signal hit
 
 export var velocity = 2
-export var music_json = ""
+export var music_jsons = [""]
 export (AudioStreamOGGVorbis) var audio_stream
 export var velocity_offset = 0.3 # extra time before start
 export var autoplay = false
@@ -16,7 +16,7 @@ var sprite_on = [] # what sprite is on the "bar"
 
 func play():
 	# set music notes and audio
-	music = JSON.parse(music_json).result
+	
 	$AudioStreamPlayer2D.stream = audio_stream
 	
 	# start notes
@@ -35,6 +35,7 @@ func _ready():
 
 func _process(delta):
 	if playing:
+		load_music()
 		play_notes(delta)
 		play_game()
 
@@ -52,6 +53,10 @@ func find_by_note(list, note):
 # playing #
 ###########
 
+func load_music():
+	if !music_jsons.empty() and music.empty():
+		music = JSON.parse(music_jsons.pop_front()).result
+	
 # Play the current `music` var
 func play_notes(delta):
 	# Because we cant get the current time before the music start...
