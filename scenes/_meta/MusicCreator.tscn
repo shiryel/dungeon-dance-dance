@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/edited_sprites/MageIdle.png" type="Texture" id=1]
-[ext_resource path="res://MusicCreator.gd" type="Script" id=2]
+[ext_resource path="res://scenes/_meta/MusicCreator.gd" type="Script" id=2]
 [ext_resource path="res://src/musics/hyi - mind breaking the body/hyi - mind breaking the body (1)/hyi - mind breaking the body - 02 you can recover.ogg" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
