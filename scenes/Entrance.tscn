@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/1bitpack_kenney_1.1/Arrows.tres" type="TileSet" id=1]
 [ext_resource path="res://src/1bitpack_kenney_1.1/Tilesheet/monochrome_transparent_packed.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/edited_sprites/destinationMarker.png" type="Texture" id=4]
 [ext_resource path="res://scenes/Entrance.gd" type="Script" id=5]
+[ext_resource path="res://src/edited_sprites/heartEmpty.png" type="Texture" id=6]
+[ext_resource path="res://src/edited_sprites/heartFull.png" type="Texture" id=7]
+[ext_resource path="res://scenes/HealthBar.gd" type="Script" id=8]
+[ext_resource path="res://scenes/Mob.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -119,9 +123,20 @@ speed = 200
 position = Vector2( 512, 320 )
 
 [node name="HealthBar" type="TextureProgress" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 112.0
+margin_top = 496.0
+margin_right = 128.0
+margin_bottom = 512.0
+rect_scale = Vector2( 2, 2 )
 value = 100.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 7 )
+fill_mode = 5
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Mob" parent="." instance=ExtResource( 9 )]
+position = Vector2( 208, 216 )
+[connection signal="hit" from="Player" to="HealthBar" method="_on_Player_hit"]

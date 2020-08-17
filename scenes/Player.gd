@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export (int) var speed = 250
+signal hit
 
 var target = Vector2()
 var velocity = Vector2()
@@ -18,5 +19,6 @@ func _physics_process(delta):
 	else:
 		$AnimatedSprite.animation = "idle"
 
-func _on_Area2D_body_entered(body): # programar damage
-	pass
+func _on_Area2D_body_entered(RigidBody2D): # programar damage
+	emit_signal("hit")
+
