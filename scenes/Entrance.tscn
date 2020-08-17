@@ -3,18 +3,13 @@
 [ext_resource path="res://src/1bitpack_kenney_1.1/Arrows.tres" type="TileSet" id=1]
 [ext_resource path="res://src/1bitpack_kenney_1.1/Tilesheet/monochrome_transparent_packed.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://global_src/edited_sprites/destinationMarker.png" type="Texture" id=4]
+[ext_resource path="res://src/edited_sprites/destinationMarker.png" type="Texture" id=4]
 [ext_resource path="res://scenes/Entrance.gd" type="Script" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
-<<<<<<< HEAD
-
-[sub_resource type="TileSet" id=1]
-=======
 [sub_resource type="TileSet" id=2]
->>>>>>> 7549ca09e04cdd369c7d80c88714df9ef6ebe71f
 0/name = "monochrome_transparent_packed.png 0"
 0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
