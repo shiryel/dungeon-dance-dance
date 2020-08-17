@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hyi - mind breaking the body - 02 you can recover.ogg-db15aefc8430d7e43b75452bff36106e.oggstr"
+
+[deps]
+
+source_file="res://src/musics/hyi - mind breaking the body/hyi - mind breaking the body (1)/hyi - mind breaking the body - 02 you can recover.ogg"
+dest_files=[ "res://.import/hyi - mind breaking the body - 02 you can recover.ogg-db15aefc8430d7e43b75452bff36106e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

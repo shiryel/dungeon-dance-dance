@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Rchetype ft. Wolfgun - Transmit Receive Jupiter - 03 LAKES.RT.ogg-ee4d0ff5b57d0a5c47b9a162c5eb939c.oggstr"
+
+[deps]
+
+source_file="res://src/musics/hyi - mind breaking the body/Rchetype ft. Wolfgun - Transmit Receive Jupiter/Rchetype ft. Wolfgun - Transmit Receive Jupiter - 03 LAKES.RT.ogg"
+dest_files=[ "res://.import/Rchetype ft. Wolfgun - Transmit Receive Jupiter - 03 LAKES.RT.ogg-ee4d0ff5b57d0a5c47b9a162c5eb939c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

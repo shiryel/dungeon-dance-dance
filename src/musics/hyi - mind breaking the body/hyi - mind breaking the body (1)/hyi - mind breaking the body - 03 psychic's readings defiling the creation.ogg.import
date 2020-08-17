@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hyi - mind breaking the body - 03 psychic's readings defiling the creation.ogg-4a0f17cd29e135b8088af0f04acfff55.oggstr"
+
+[deps]
+
+source_file="res://src/musics/hyi - mind breaking the body/hyi - mind breaking the body (1)/hyi - mind breaking the body - 03 psychic's readings defiling the creation.ogg"
+dest_files=[ "res://.import/hyi - mind breaking the body - 03 psychic's readings defiling the creation.ogg-4a0f17cd29e135b8088af0f04acfff55.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
