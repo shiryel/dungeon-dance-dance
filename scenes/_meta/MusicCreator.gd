@@ -21,7 +21,7 @@ func _process(delta):
 		play_notes(delta)
 		play_game()
 	$Score.text = str(points)
-	$Miss.test = str(miss)
+	$Miss.text = str(miss)
 
 #########
 # UTILS #
