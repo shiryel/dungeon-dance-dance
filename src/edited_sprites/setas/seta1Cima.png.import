@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cover.jpg-20d9fd9657c03ce73fe790ddbbce1668.stex"
+path="res://.import/seta1Cima.png-a15d35bd945cbc1610b05fbfd38d9b6d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/musics/hyi - mind breaking the body/hyi - mind breaking the body (1)/cover.jpg"
-dest_files=[ "res://.import/cover.jpg-20d9fd9657c03ce73fe790ddbbce1668.stex" ]
+source_file="res://src/edited_sprites/setas/seta1Cima.png"
+dest_files=[ "res://.import/seta1Cima.png-a15d35bd945cbc1610b05fbfd38d9b6d.stex" ]
 
 [params]
 
