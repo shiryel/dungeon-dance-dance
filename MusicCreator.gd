@@ -20,6 +20,8 @@ func _process(delta):
 	if state == "playing":
 		play_notes(delta)
 		play_game()
+	$Score.text = str(points)
+	$Miss.test = str(miss)
 
 #########
 # UTILS #
@@ -141,3 +143,6 @@ func _on_down_body_exited(body):
 	var result = find_by_note(sprite_on, "down")
 	sprite_on.remove(sprite_on.find(result))
 	miss += 1
+
+func _on_Copy_pressed():
+	OS.clipboard = $JsonResult.text

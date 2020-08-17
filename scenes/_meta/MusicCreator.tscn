@@ -139,6 +139,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Score" type="Label" parent="."]
+margin_left = 651.029
+margin_top = 148.088
+margin_right = 734.029
+margin_bottom = 172.088
+rect_pivot_offset = Vector2( -367.768, -39.4279 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Miss" type="Label" parent="."]
+margin_left = 653.41
+margin_top = 214.759
+margin_right = 736.41
+margin_bottom = 238.759
+rect_pivot_offset = Vector2( -367.768, -39.4279 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="JsonResult" type="TextEdit" parent="."]
 margin_left = 11.7553
 margin_top = 38.9914
@@ -179,6 +199,17 @@ text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Copy" type="Button" parent="."]
+margin_left = 132.866
+margin_top = 428.281
+margin_right = 223.866
+margin_bottom = 454.281
+rect_pivot_offset = Vector2( -562.247, -41.9695 )
+text = "Copy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="NoteEnd/SpritesEnd/right" to="." method="_on_right_body_entered"]
 [connection signal="body_exited" from="NoteEnd/SpritesEnd/right" to="." method="_on_right_body_exited"]
 [connection signal="body_entered" from="NoteEnd/SpritesEnd/left" to="." method="_on_left_body_entered"]
@@ -190,3 +221,4 @@ __meta__ = {
 [connection signal="pressed" from="RecordNew" to="." method="_on_RecordNew_pressed"]
 [connection signal="pressed" from="LoadCurrent" to="." method="_on_LoadCurrent_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Copy" to="." method="_on_Copy_pressed"]
