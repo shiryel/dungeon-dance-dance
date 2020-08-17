@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/edited_sprites/setas/seta2Esquerda.png" type="Texture" id=1]
 [ext_resource path="res://scenes/MusicPlayer.gd" type="Script" id=2]
-[ext_resource path="res://src/musics/hyi - mind breaking the body (1)/hyi - mind breaking the body - 02 you can recover.ogg" type="AudioStream" id=3]
+[ext_resource path="res://src/musics/hyi - mind breaking the body/hyi - mind breaking the body - 02 you can recover.ogg" type="AudioStream" id=3]
 [ext_resource path="res://src/edited_sprites/setas/seta1Esquerda.png" type="Texture" id=4]
 [ext_resource path="res://src/edited_sprites/setas/seta1Direita.png" type="Texture" id=5]
 [ext_resource path="res://src/edited_sprites/setas/seta1Baixo.png" type="Texture" id=6]
