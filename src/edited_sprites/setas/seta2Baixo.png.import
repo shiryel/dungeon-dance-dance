@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cover.png-9ae53f94ccac276b4dfdfed300fce302.stex"
+path="res://.import/seta2Baixo.png-96d6b9439f388dde9fad5816a35aa249.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/musics/hyi - mind breaking the body/Rchetype ft. Wolfgun - Transmit Receive Jupiter/cover.png"
-dest_files=[ "res://.import/cover.png-9ae53f94ccac276b4dfdfed300fce302.stex" ]
+source_file="res://src/edited_sprites/setas/seta2Baixo.png"
+dest_files=[ "res://.import/seta2Baixo.png-96d6b9439f388dde9fad5816a35aa249.stex" ]
 
 [params]
 
