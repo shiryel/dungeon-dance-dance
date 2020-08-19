@@ -16,12 +16,11 @@ var sprite_on = [] # what sprite is on the "bar"
 
 func play():
 	# set music notes and audio
-	
 	$AudioStreamPlayer2D.stream = audio_stream
-	
+
 	# start notes
 	playing = true
-	
+
 	# start music
 	current_play_time = -velocity
 	get_tree().create_timer(velocity + velocity_offset).connect("timeout", self, "play_music")
@@ -91,11 +90,34 @@ func play_game():
 	for x in ["right", "left", "up", "down"]:
 		var input = str("ui_", x)
 		if Input.is_action_just_pressed(input):
+			get_node(str("NoteEnd/SpritesEnd/", x, "/Sprite")).scale.x = 1.2
+			get_node(str("NoteEnd/SpritesEnd/", x, "/Sprite")).scale.y = 1.2
+			get_tree().create_timer(0.25).connect("timeout", self, str("_reset_sprite_end_", x))
 			var result = find_by_note(sprite_on, x)
 			if result != null:
 				result.body.visible = false
 				result.body.queue_free()
 				sprite_on.remove(sprite_on.find(result))
+
+func _reset_sprite_end_right():
+	$NoteEnd/SpritesEnd/right/Sprite.scale.x = 1
+	$NoteEnd/SpritesEnd/right/Sprite.scale.y = 1
+	
+func _reset_sprite_end_up():
+	$NoteEnd/SpritesEnd/up/Sprite.scale.x = 1
+	$NoteEnd/SpritesEnd/up/Sprite.scale.y = 1
+
+func _reset_sprite_end_down():
+	$NoteEnd/SpritesEnd/down/Sprite.scale.x = 1
+	$NoteEnd/SpritesEnd/down/Sprite.scale.y = 1
+
+func _reset_sprite_end_left():
+	$NoteEnd/SpritesEnd/left/Sprite.scale.x = 1
+	$NoteEnd/SpritesEnd/left/Sprite.scale.y = 1
+
+################
+# NOTE SIGNALS #
+################
 
 func _on_right_body_entered(body):
 	sprite_on.append({"note": "right", "body": body})

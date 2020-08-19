@@ -9,25 +9,19 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "CollisionShape2D",
-"class": "Geometry2D",
-"language": "GDScript",
-"path": "res://src/shiryel_utils/geometry2D.gd"
-}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://git_api.gdns"
 } ]
 _global_script_class_icons={
-"Geometry2D": "",
 "GitAPI": ""
 }
 
 [application]
 
 config/name="aloft_melody"
-run/main_scene="res://scenes/MusicPlayer.tscn"
+run/main_scene="res://scenes/_utils/MusicPlayer.tscn"
 config/icon="res://icon.png"
 
 [audio]
