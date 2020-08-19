@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://scenes/_utils/MusicPlayer.gd" type="Script" id=1]
+[ext_resource path="res://scenes/_global/MusicPlayer.gd" type="Script" id=1]
 [ext_resource path="res://src/edited_sprites/setas/seta2Direita.png" type="Texture" id=2]
 [ext_resource path="res://src/edited_sprites/setas/seta1Cima.png" type="Texture" id=3]
 [ext_resource path="res://src/edited_sprites/setas/seta1Baixo.png" type="Texture" id=4]
@@ -10,6 +10,7 @@
 [ext_resource path="res://src/edited_sprites/setas/seta1Esquerda.png" type="Texture" id=8]
 [ext_resource path="res://src/edited_sprites/setas/seta2Cima.png" type="Texture" id=9]
 [ext_resource path="res://src/edited_sprites/setas/seta2Baixo.png" type="Texture" id=10]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 

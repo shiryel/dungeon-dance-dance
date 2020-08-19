@@ -2,7 +2,8 @@
 
 [ext_resource path="res://src/edited_sprites/fireball1.png" type="Texture" id=1]
 [ext_resource path="res://src/edited_sprites/fireball2.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Fireball.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Player/Fireball.gd" type="Script" id=3]
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 14.0802

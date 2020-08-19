@@ -2,14 +2,14 @@
 
 [ext_resource path="res://src/1bitpack_kenney_1.1/Arrows.tres" type="TileSet" id=1]
 [ext_resource path="res://src/1bitpack_kenney_1.1/Tilesheet/monochrome_transparent_packed.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/edited_sprites/destinationMarker.png" type="Texture" id=4]
-[ext_resource path="res://scenes/Entrance.gd" type="Script" id=5]
+[ext_resource path="res://scenes/Entrance/Entrance.gd" type="Script" id=5]
 [ext_resource path="res://src/edited_sprites/heartEmpty.png" type="Texture" id=6]
 [ext_resource path="res://src/edited_sprites/heartNoBorders.png" type="Texture" id=7]
-[ext_resource path="res://scenes/HealthBar.gd" type="Script" id=8]
-[ext_resource path="res://scenes/Mob.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/Fireball.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/Player/HealthBar.gd" type="Script" id=8]
+[ext_resource path="res://scenes/_global/Mob.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Player/Fireball.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
