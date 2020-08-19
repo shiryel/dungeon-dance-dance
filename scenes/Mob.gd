@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export (int) var speed = 80
 var velocity = Vector2()
-var target = Vector2()
+export var target = Vector2()
 
 func _physics_process(delta):
 	velocity = (target - position).normalized() * speed
