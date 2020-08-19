@@ -11,7 +11,6 @@
 [ext_resource path="res://src/edited_sprites/setas/seta2Cima.png" type="Texture" id=9]
 [ext_resource path="res://src/edited_sprites/setas/seta2Baixo.png" type="Texture" id=10]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 [sub_resource type="OccluderPolygon2D" id=2]
