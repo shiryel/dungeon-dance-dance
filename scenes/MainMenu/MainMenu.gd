@@ -12,3 +12,6 @@ func _on_RoxoFoxo_pressed():
 
 func _on_Play_pressed():
 	get_tree().change_scene("res://scenes/Entrance.tscn")
+
+func _on_source_pressed():
+	OS.shell_open("https://github.com/shiryel/dungeon-dance-dance")

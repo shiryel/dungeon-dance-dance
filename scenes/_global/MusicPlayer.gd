@@ -23,9 +23,9 @@ func play():
 
 	# start music
 	current_play_time = -velocity
-	get_tree().create_timer(velocity + velocity_offset).connect("timeout", self, "play_music")
+	get_tree().create_timer(velocity + velocity_offset).connect("timeout", self, "_play_music")
 
-func play_music():
+func _play_music():
 	$AudioStreamPlayer2D.play(0)
 
 func _ready():
@@ -34,15 +34,15 @@ func _ready():
 
 func _process(delta):
 	if playing:
-		load_music()
-		play_notes(delta)
-		play_game()
+		_load_music()
+		_play_notes(delta)
+		_play_game()
 
 #########
 # UTILS #
 #########
 
-func find_by_note(list, note):
+func _find_by_note(list, note):
 	for y in list:
 		if y.note == note:
 			return y
@@ -52,12 +52,12 @@ func find_by_note(list, note):
 # playing #
 ###########
 
-func load_music():
+func _load_music():
 	if !music_jsons.empty() and music.empty():
 		music = JSON.parse(music_jsons.pop_front()).result
 	
 # Play the current `music` var
-func play_notes(delta):
+func _play_notes(delta):
 	# Because we cant get the current time before the music start...
 	# we need to use the delta + a global variable...
 	if $AudioStreamPlayer2D.playing:
@@ -71,10 +71,10 @@ func play_notes(delta):
 	if music.empty():
 		return
 	if music.front().time < current_play_time + velocity:
-		spawn_note(music.front().note)
+		_spawn_note(music.front().note)
 		music.pop_front()
 
-func spawn_note(note):
+func _spawn_note(note):
 	var sprite
 	for x in ["right", "left", "up", "down"]:
 		if note == x:
@@ -86,14 +86,17 @@ func spawn_note(note):
 			var distance = get_node(str("NoteEnd/", x)).position - note_start.position
 			sprite.linear_velocity = distance / velocity
 
-func play_game():
+func _play_game():
 	for x in ["right", "left", "up", "down"]:
 		var input = str("ui_", x)
 		if Input.is_action_just_pressed(input):
+			# press animation
 			get_node(str("NoteEnd/SpritesEnd/", x, "/Sprite")).scale.x = 1.2
 			get_node(str("NoteEnd/SpritesEnd/", x, "/Sprite")).scale.y = 1.2
 			get_tree().create_timer(0.25).connect("timeout", self, str("_reset_sprite_end_", x))
-			var result = find_by_note(sprite_on, x)
+			
+			# verify if it hit the note
+			var result = _find_by_note(sprite_on, x)
 			if result != null:
 				result.body.visible = false
 				result.body.queue_free()
@@ -123,34 +126,45 @@ func _on_right_body_entered(body):
 	sprite_on.append({"note": "right", "body": body})
 
 func _on_right_body_exited(_body):
-	var result = find_by_note(sprite_on, "right")
-	remove_if_any_exited_with_result(result)
+	var result = _find_by_note(sprite_on, "right")
+	_remove_if_any_exited_with_result(result)
 
 func _on_left_body_entered(body):
 	sprite_on.append({"note": "left", "body": body})
 
 func _on_left_body_exited(_body):
-	var result = find_by_note(sprite_on, "left")
-	remove_if_any_exited_with_result(result)
+	var result = _find_by_note(sprite_on, "left")
+	_remove_if_any_exited_with_result(result)
 
 func _on_up_body_entered(body):
 	sprite_on.append({"note": "up", "body": body})
 
 func _on_up_body_exited(_body):
-	var result = find_by_note(sprite_on, "up")
-	remove_if_any_exited_with_result(result)
+	var result = _find_by_note(sprite_on, "up")
+	_remove_if_any_exited_with_result(result)
 
 func _on_down_body_entered(body):
 	sprite_on.append({"note": "down", "body": body})
 
 func _on_down_body_exited(_body):
-	var result = find_by_note(sprite_on, "down")
-	remove_if_any_exited_with_result(result)
-		
-func remove_if_any_exited_with_result(result):
+	var result = _find_by_note(sprite_on, "down")
+	_remove_if_any_exited_with_result(result)
+
+func _remove_if_any_exited_with_result(result):
 	if result:
+		# ease_out animation (keep in sync with the create_timer)
+		var fadeout = Tween.new()
+		add_child(fadeout)
+		fadeout.interpolate_property(result.body, "scale", result.body.scale, Vector2(), 0.5, Tween.EASE_OUT)
+		fadeout.start()
+		
+		# we need to remove from the sprite_on list now because of sync
+		get_tree().create_timer(0.5).connect("timeout", self, "_remove", [result])
 		sprite_on.remove(sprite_on.find(result))
-		result.body.queue_free()
+		
 		emit_signal("miss")
 	else:
 		emit_signal("hit")
+
+func _remove(result):
+	result.body.queue_free()
