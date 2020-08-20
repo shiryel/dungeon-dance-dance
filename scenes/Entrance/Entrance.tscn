@@ -1,15 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/1bitpack_kenney_1.1/Arrows.tres" type="TileSet" id=1]
 [ext_resource path="res://src/1bitpack_kenney_1.1/Tilesheet/monochrome_transparent_packed.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/edited_sprites/destinationMarker.png" type="Texture" id=4]
+[ext_resource path="res://scenes/_global/MusicPlayer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Entrance/Entrance.gd" type="Script" id=5]
-[ext_resource path="res://src/edited_sprites/heartEmpty.png" type="Texture" id=6]
-[ext_resource path="res://src/edited_sprites/heartNoBorders.png" type="Texture" id=7]
-[ext_resource path="res://scenes/Player/HealthBar.gd" type="Script" id=8]
 [ext_resource path="res://scenes/_global/Mob.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/Player/Fireball.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -90,7 +86,6 @@ __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
 Mob = ExtResource( 9 )
-Fireball = ExtResource( 11 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1024.0
@@ -124,60 +119,17 @@ cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
 
-[node name="DestinationMarker" type="Sprite" parent="."]
-visible = false
-scale = Vector2( 2, 2 )
-texture = ExtResource( 4 )
-
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 512, 320 )
-speed = 200
-
-[node name="HealthBar" type="TextureProgress" parent="."]
-margin_left = 96.0
-margin_top = 480.0
-margin_right = 112.0
-margin_bottom = 496.0
-rect_scale = Vector2( 2, 2 )
-value = 100.0
-texture_under = ExtResource( 6 )
-texture_progress = ExtResource( 7 )
-fill_mode = 5
-tint_under = Color( 0.388235, 0, 0, 1 )
-tint_progress = Color( 0.835294, 0.121569, 0.121569, 1 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="UrDead" type="Label" parent="."]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 336.0
-margin_top = 208.088
-margin_right = 456.0
-margin_bottom = 239.088
-rect_scale = Vector2( 3, 3 )
-rect_pivot_offset = Vector2( 0, 15.956 )
-text = "YOU ARE DEAD
-NOT BIG SURPRISE"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MobTimerTest" type="Timer" parent="."]
-autostart = true
-
 [node name="MobPath" type="Path2D" parent="."]
 curve = SubResource( 3 )
 
 [node name="MobSpawn" type="PathFollow2D" parent="MobPath"]
 position = Vector2( 80, 112 )
 rotation = 1.94468e-06
-[connection signal="hit" from="Player" to="HealthBar" method="_on_Player_hit"]
-[connection signal="timeout" from="MobTimerTest" to="." method="MobSpawn"]
+
+[node name="MusicPlayer" parent="." instance=ExtResource( 4 )]
+position = Vector2( 443.289, 69.1388 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 512, 320 )
+speed = 200
+[connection signal="miss" from="MusicPlayer" to="." method="_on_MusicPlayer_miss"]

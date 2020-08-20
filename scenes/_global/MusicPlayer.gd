@@ -155,11 +155,11 @@ func _remove_if_any_exited_with_result(result):
 		# ease_out animation (keep in sync with the create_timer)
 		var fadeout = Tween.new()
 		add_child(fadeout)
-		fadeout.interpolate_property(result.body, "scale", result.body.scale, Vector2(), 0.5, Tween.EASE_OUT)
+		fadeout.interpolate_property(result.body, "scale", result.body.scale, Vector2(), 0.75, Tween.EASE_OUT)
 		fadeout.start()
 		
 		# we need to remove from the sprite_on list now because of sync
-		get_tree().create_timer(0.5).connect("timeout", self, "_remove", [result])
+		get_tree().create_timer(0.75).connect("timeout", self, "_remove", [result])
 		sprite_on.remove(sprite_on.find(result))
 		
 		emit_signal("miss")
