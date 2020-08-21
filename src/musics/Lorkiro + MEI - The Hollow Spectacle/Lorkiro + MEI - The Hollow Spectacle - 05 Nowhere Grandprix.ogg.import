@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Lorkiro + MEI - The Hollow Spectacle - 05 Nowhere Grandprix.ogg-36da3c9799b7b02aed0c9e648dc23f82.oggstr"
+
+[deps]
+
+source_file="res://src/musics/Lorkiro + MEI - The Hollow Spectacle/Lorkiro + MEI - The Hollow Spectacle - 05 Nowhere Grandprix.ogg"
+dest_files=[ "res://.import/Lorkiro + MEI - The Hollow Spectacle - 05 Nowhere Grandprix.ogg-36da3c9799b7b02aed0c9e648dc23f82.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

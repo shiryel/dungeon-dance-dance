@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://src/fonts/Bungee_Shade/BungeeShade-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://src/fonts/Orbitron/static/Orbitron-Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://src/fonts/Orbitron/Orbitron-VariableFont_wght.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://src/musics/MEI - M/MEI - M - 02 think of something else.ogg" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 39
@@ -137,6 +138,10 @@ text = "PLAY"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
 [connection signal="pressed" from="MadeBy/Shiryel" to="." method="_on_Shiryel_pressed"]
 [connection signal="pressed" from="MadeBy/RoxoFoxo" to="." method="_on_RoxoFoxo_pressed"]
 [connection signal="pressed" from="MadeBy/source" to="." method="_on_source_pressed"]

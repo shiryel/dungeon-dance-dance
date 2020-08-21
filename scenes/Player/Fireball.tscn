@@ -38,6 +38,5 @@ self_modulate = Color( 1, 0.607843, 0, 1 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "fireball"
-frame = 1
 playing = true
 [connection signal="body_entered" from="Area2D" to="." method="fireball_hit"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Lorkiro + MEI - The Hollow Spectacle - 06 Shredding of a Story.ogg-f69c9db9aad9caa5067e464e02db4cf0.oggstr"
+
+[deps]
+
+source_file="res://src/musics/Lorkiro + MEI - The Hollow Spectacle/Lorkiro + MEI - The Hollow Spectacle - 06 Shredding of a Story.ogg"
+dest_files=[ "res://.import/Lorkiro + MEI - The Hollow Spectacle - 06 Shredding of a Story.ogg-f69c9db9aad9caa5067e464e02db4cf0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
