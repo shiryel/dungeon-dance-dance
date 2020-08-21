@@ -40,4 +40,3 @@ playing = true
 position = Vector2( 0, 3.11815 )
 rotation = 1.5708
 shape = SubResource( 1 )
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

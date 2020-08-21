@@ -1,5 +1,6 @@
 extends Node2D
 
+signal finished
 signal miss
 signal hit
 
@@ -168,3 +169,7 @@ func _remove_if_any_exited_with_result(result):
 
 func _remove(result):
 	result.body.queue_free()
+
+func _on_AudioStreamPlayer2D_finished():
+	$AudioStreamPlayer2D.stop()
+	emit_signal("finished")

@@ -15,7 +15,6 @@ func _process(delta):
 			spawned_mobs.remove(spawned_mobs.find(mob))
 		else:
 			mob.target = $Player.position
-		
 
 func _on_MusicPlayer_miss():
 	$MobPath/MobSpawn.offset = randi()
@@ -23,3 +22,6 @@ func _on_MusicPlayer_miss():
 	call_deferred("add_child_below_node", $MusicPlayer, mob)
 	mob.position = $MobPath/MobSpawn.position
 	spawned_mobs.append(mob)
+
+func _on_Player_hit():
+	$Camera2D/ScreenShake.shake(0.5)

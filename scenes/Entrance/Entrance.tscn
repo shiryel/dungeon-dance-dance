@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
+[ext_resource path="res://scenes/_global/ScreenShake.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/1bitpack_kenney_1.1/Tilesheet/monochrome_transparent_packed.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/_global/MusicPlayer.tscn" type="PackedScene" id=4]
@@ -125,14 +126,20 @@ position = Vector2( 80, 112 )
 rotation = 1.94468e-06
 
 [node name="MusicPlayer" parent="." instance=ExtResource( 4 )]
-position = Vector2( 344, -296 )
-scale = Vector2( 2, 2 )
+position = Vector2( 410.596, 73.8436 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 512, 320 )
 speed = 200
 
 [node name="Hud" parent="." instance=ExtResource( 6 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 511.359, 303.248 )
+current = true
+
+[node name="ScreenShake" parent="Camera2D" instance=ExtResource( 1 )]
 [connection signal="miss" from="MusicPlayer" to="." method="_on_MusicPlayer_miss"]
+[connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="Hud" method="_on_Player_hit"]
 [connection signal="dead" from="Hud" to="Player" method="death"]
