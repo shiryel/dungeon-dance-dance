@@ -9,6 +9,7 @@ func _ready():
 	$Player.target = $StartingPosition.position
 	randomize()
 
+# warning-ignore:unused_argument
 func _process(delta):
 	for mob in spawned_mobs:
 		if mob == null:
