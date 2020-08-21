@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/_global/Hud.gd" type="Script" id=1]
+[ext_resource path="res://src/fonts/Orbitron/static/Orbitron-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/edited_sprites/heartEmpty.png" type="Texture" id=3]
+[ext_resource path="res://src/edited_sprites/heartNoBorders.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[node name="Hud" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" type="TextureProgress" parent="."]
+margin_left = 46.8221
+margin_top = 38.5814
+margin_right = 62.8221
+margin_bottom = 54.5814
+rect_scale = Vector2( 2, 2 )
+value = 100.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 4 )
+fill_mode = 5
+tint_under = Color( 0.388235, 0, 0, 1 )
+tint_progress = Color( 0.835294, 0.121569, 0.121569, 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="UrDead" type="Label" parent="."]
+visible = false
+modulate = Color( 1, 0, 0, 1 )
+show_behind_parent = true
+margin_left = 250.92
+margin_top = 224.239
+margin_right = 420.92
+margin_bottom = 269.239
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 15.956 )
+custom_fonts/font = SubResource( 1 )
+text = "YOU ARE DEAD
+NOT BIG SURPRISE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}

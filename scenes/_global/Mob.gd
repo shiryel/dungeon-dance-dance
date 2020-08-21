@@ -8,3 +8,7 @@ func _physics_process(delta):
 	velocity = (target - position).normalized() * speed
 	if (target - position).length() > 5:
 		velocity = move_and_slide(velocity)
+
+func _on_Area2D_body_entered(RigidBody2D):
+	print("help")
+	

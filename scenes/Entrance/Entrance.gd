@@ -11,13 +11,15 @@ func _ready():
 
 func _process(delta):
 	for mob in spawned_mobs:
-		mob.target = $Player.position
+		if mob == null:
+			spawned_mobs.remove(spawned_mobs.find(mob))
+		else:
+			mob.target = $Player.position
+		
 
 func _on_MusicPlayer_miss():
 	$MobPath/MobSpawn.offset = randi()
 	var mob = Mob.instance()
 	call_deferred("add_child_below_node", $MusicPlayer, mob)
 	mob.position = $MobPath/MobSpawn.position
-	mob.add_collision_exception_with($Player)
-	
 	spawned_mobs.append(mob)
