@@ -11,7 +11,7 @@ func _on_RoxoFoxo_pressed():
 	OS.shell_open("https://twitter.com/RoxoTheFoxo")
 
 func _on_Play_pressed():
-	get_tree().change_scene("res://scenes/Entrance/Entrance.tscn")
+	get_tree().change_scene("res://scenes/Levels/Level1.tscn")
 
 func _on_source_pressed():
 	OS.shell_open("https://github.com/shiryel/dungeon-dance-dance")

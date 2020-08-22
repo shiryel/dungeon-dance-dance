@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Halley Labs Associates - 2YR, 40-28.649 - 06 Wasn't All There.ogg-3a99daf7adc0570695687c08ebdf010d.oggstr"
+
+[deps]
+
+source_file="res://src/musics/Halley Labs Associates - 2YR, 40-28.649 - 06 Wasn't All There.ogg"
+dest_files=[ "res://.import/Halley Labs Associates - 2YR, 40-28.649 - 06 Wasn't All There.ogg-3a99daf7adc0570695687c08ebdf010d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

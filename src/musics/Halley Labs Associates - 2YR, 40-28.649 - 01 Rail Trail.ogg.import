@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Halley Labs Associates - 2YR, 40-28.649 - 01 Rail Trail.ogg-ace89546a1fe0088560a409b1d9d9d51.oggstr"
+
+[deps]
+
+source_file="res://src/musics/Halley Labs Associates - 2YR, 40-28.649 - 01 Rail Trail.ogg"
+dest_files=[ "res://.import/Halley Labs Associates - 2YR, 40-28.649 - 01 Rail Trail.ogg-ace89546a1fe0088560a409b1d9d9d51.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/JonKaGor - Another Mistake - 02 Another Mistake (Karaoke).wav-16a01632a79d36a8dea6d4ddafe9f09e.sample"
+
+[deps]
+
+source_file="res://src/musics/JonKaGor - Another Mistake - 02 Another Mistake (Karaoke).wav"
+dest_files=[ "res://.import/JonKaGor - Another Mistake - 02 Another Mistake (Karaoke).wav-16a01632a79d36a8dea6d4ddafe9f09e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

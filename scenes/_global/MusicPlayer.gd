@@ -17,7 +17,7 @@ var sprite_on = [] # what sprite is on the "bar"
 
 func play():
 	# set music notes and audio
-	$AudioStreamPlayer2D.stream = audio_stream
+	$AudioStreamPlayer.stream = audio_stream
 
 	# start notes
 	playing = true
@@ -26,8 +26,12 @@ func play():
 	current_play_time = -velocity
 	get_tree().create_timer(velocity + velocity_offset).connect("timeout", self, "_play_music")
 
+func stop():
+	$AudioStreamPlayer.stop()
+	playing = false
+
 func _play_music():
-	$AudioStreamPlayer2D.play(0)
+	$AudioStreamPlayer.play(0)
 
 func _ready():
 	if autoplay:
@@ -38,6 +42,7 @@ func _process(delta):
 		_load_music()
 		_play_notes(delta)
 		_play_game()
+		_verify_stop()
 
 #########
 # UTILS #
@@ -53,6 +58,10 @@ func _find_by_note(list, note):
 # playing #
 ###########
 
+func _verify_stop():
+	if music_jsons.empty() and music.empty():
+		$AudioStreamPlayer.stop()
+
 func _load_music():
 	if !music_jsons.empty() and music.empty():
 		music = JSON.parse(music_jsons.pop_front()).result
@@ -61,8 +70,8 @@ func _load_music():
 func _play_notes(delta):
 	# Because we cant get the current time before the music start...
 	# we need to use the delta + a global variable...
-	if $AudioStreamPlayer2D.playing:
-		current_play_time = $AudioStreamPlayer2D.get_playback_position()
+	if $AudioStreamPlayer.playing:
+		current_play_time = $AudioStreamPlayer.get_playback_position()
 	else:
 		current_play_time += delta
 	
@@ -170,6 +179,5 @@ func _remove_if_any_exited_with_result(result):
 func _remove(result):
 	result.body.queue_free()
 
-func _on_AudioStreamPlayer2D_finished():
-	$AudioStreamPlayer2D.stop()
+func _on_AudioStreamPlayer_finished():
 	emit_signal("finished")

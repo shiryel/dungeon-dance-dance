@@ -4,7 +4,7 @@
 [ext_resource path="res://src/fonts/Bungee_Shade/BungeeShade-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://src/fonts/Orbitron/static/Orbitron-Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://src/fonts/Orbitron/Orbitron-VariableFont_wght.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://src/musics/MEI - M/MEI - M - 02 think of something else.ogg" type="AudioStream" id=5]
+[ext_resource path="res://src/musics/MEI - M - 02 think of something else.ogg" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 39

@@ -4,6 +4,7 @@ export (PackedScene) var Fireball
 
 export (int) var speed = 250
 signal hit
+signal dead
 
 var target = Vector2()
 var velocity = Vector2()
@@ -31,4 +32,5 @@ func _on_Area2D_body_entered(body):
 
 func death():
 	$AnimatedSprite.hide()
+	emit_signal("dead")
 	speed = 0 # the player can't move while dead (meio gambiarra)

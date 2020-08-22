@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/_global/MusicPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/_meta/MusicCreator.gd" type="Script" id=2]
-[ext_resource path="res://src/musics/Lorkiro + MEI - The Hollow Spectacle/Lorkiro + MEI - The Hollow Spectacle - 05 Nowhere Grandprix.ogg" type="AudioStream" id=4]
+[ext_resource path="res://src/musics/Halley Labs Associates - 2YR, 40-28.649 - 01 Rail Trail.ogg" type="AudioStream" id=3]
+[ext_resource path="res://src/musics/JonKaGor - Another Mistake - 02 Another Mistake (Karaoke).ogg" type="AudioStream" id=4]
 
 [node name="MusicCreator" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="MusicPlayer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 416.05, 49.8904 )
-audio_stream = ExtResource( 4 )
-autoplay = false
+audio_stream = ExtResource( 3 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Halley Labs Associates - 2YR, 40-28.649 - 07 Diving Again, Blinding Blackness.ogg-c556b42fbf0beec4973c7b089ba187a2.oggstr"
+
+[deps]
+
+source_file="res://src/musics/Halley Labs Associates - 2YR, 40-28.649 - 07 Diving Again, Blinding Blackness.ogg"
+dest_files=[ "res://.import/Halley Labs Associates - 2YR, 40-28.649 - 07 Diving Again, Blinding Blackness.ogg-c556b42fbf0beec4973c7b089ba187a2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
