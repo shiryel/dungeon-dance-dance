@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blood1.png-befa3787e8864ff2dd26ff2e6e652184.stex"
+path="res://.import/skull.png-49d9d3ceaf6528f2a796e612ce667a4e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/1bitpack_kenney_1.1/Tilesheet/blood1.png"
-dest_files=[ "res://.import/blood1.png-befa3787e8864ff2dd26ff2e6e652184.stex" ]
+source_file="res://src/edited_sprites/skull.png"
+dest_files=[ "res://.import/skull.png-49d9d3ceaf6528f2a796e612ce667a4e.stex" ]
 
 [params]
 
