@@ -32,6 +32,10 @@ default_bus_layout=""
 
 Checkpoint="*res://scenes/_global/Checkpoint.gd"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [display]
 
 window/stretch/mode="2d"
@@ -93,6 +97,14 @@ ui_pause={
  ]
 }
 
+[memory]
+
+limits/message_queue/max_size_kb=2048
+
 [rendering]
 
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=1
+threads/thread_model=2
+quality/filters/anisotropic_filter_level=2
 environment/default_environment="res://default_env.tres"
