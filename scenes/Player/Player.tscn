@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/edited_sprites/MageWalking1.png" type="Texture" id=1]
 [ext_resource path="res://src/edited_sprites/MageWalking2.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/Player/Player.gd" type="Script" id=4]
 [ext_resource path="res://scenes/_global/ScreenShake.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/edited_sprites/white.jpg" type="Texture" id=6]
+[ext_resource path="res://src/edited_sprites/skullandbones.png" type="Texture" id=7]
 [ext_resource path="res://scenes/Player/Fireball.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -46,6 +47,11 @@ shape = SubResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 2, 2 )
 shape = SubResource( 2 )
+
+[node name="SkullAndBones" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
