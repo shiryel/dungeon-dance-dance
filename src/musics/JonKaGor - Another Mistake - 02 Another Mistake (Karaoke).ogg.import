@@ -11,5 +11,5 @@ dest_files=[ "res://.import/JonKaGor - Another Mistake - 02 Another Mistake (Kar
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

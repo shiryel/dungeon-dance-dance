@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Kitsune² - B-SIDE U- 2015 - 08 A Language Unspoken.
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -7,17 +7,9 @@ signal next
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Dialog.say("Hello Adventurer...", 4)
+	$Dialog.say("you... . . .", 5)
 	yield(self, "next")
-	$Dialog.say("Welcome to my dungeon...", 5)
-	yield(self, "next")
-	$Dialog.say("You problably already know, but I need to follow the protocol... " + 
-	"Here I'll test if you are worthy of taking the secrets of our " +
-	"ancient civilization...", 16)
-	yield(self, "next")
-	$Dialog.say("So, let's start? Use W, A, S, D to get the points " +
-	"you can use the right click to move around and " +
-	"the left click to attack... and remember... make a minefield heheheheh", 16)
+	$Dialog.say("DIE!", 5)
 	yield(self, "next")
 	
 	if not skiped:
@@ -25,20 +17,40 @@ func _ready():
 		$"../MusicInfo".start()
 	
 	$Dialog.hide_skip_button()
-	$Dialog.say("Good luck... you'll need it. Heheheh", 5)
+	
+	var _err = yield(get_tree().create_timer(58), "timeout")
+	$Dialog.show()
+	$Dialog.say("ERROR ERROR ERROR", 5)
+	yield(self, "next")
+	_err = yield(get_tree().create_timer(20), "timeout")
+	$Dialog.say("RESTARTING RESTARTING...", 5)
+	yield(self, "next")
+	_err = yield(get_tree().create_timer(27), "timeout")
+	$Dialog.say("AWWWWWWWWWWWWWWWWW... DIE!", 5)
+	yield(self, "next")
+	_err = yield(get_tree().create_timer(25), "timeout")
+	$Dialog.say("CRITICAL ERROR", 5)
+	yield(self, "next")
+	$Dialog.say("INTERNAL FATAL ERROR", 5)
+	yield(self, "next")
+	$Dialog.say("123#$#%!#2$@%$%#$1AA#246123", 5)
 	yield(self, "next")
 
 func _on_MusicPlayer_finished():
 	if not dead:
 		$Dialog.show()
-		$Dialog.say("Congratulations, you finished the tutorial!", 5)
+		$Dialog.say("*after winning, you find a chest... It contains a piece of cake and the recipe*", 10)
 		yield(self, "next")
-		$Dialog.say("Ready for the next step? And remember, you can press ESC to pause the game", 7)
+		$Dialog.say("*gamedev 1: ... it is this?*", 7)
 		yield(self, "next")
-		$Dialog.say("Ok... let's go!", 3)
+		$Dialog.say("*gamedev 2: ... we dont have much more time you know?*", 8)
+		yield(self, "next")
+		$Dialog.say("*gamedev 2: oh ok... *sad fennec noises* *", 8)
+		yield(self, "next")
+		$Dialog.say("*gamedev 1: Yes you can close the game now!*", 7)
 		yield(self, "next")
 		
-		var _err = get_tree().change_scene("res://scenes/Levels/Level2.tscn")
+		var _err = get_tree().change_scene("res://scenes/MainMenu/MainMenu.tscn")
 
 func _on_Player_dead():
 	if not dead:
@@ -47,7 +59,7 @@ func _on_Player_dead():
 		$"../MusicPlayer".stop()
 	
 		$Dialog.show()
-		$Dialog.say("They came in a blink and they go in a blink... what a shame.", 6)
+		$Dialog.say("AHAHAHAHA FINALLY, I FINISHED MORE ONE, HAHAHAHHA", 5)
 		yield(self, "next")
 		
 		# feature
@@ -63,10 +75,10 @@ func _on_Player_dead():
 			$Dialog.say("*Gamedev 2: you....*", 3)
 			yield(self, "next")
 			Checkpoint.deaths = 0
-			
+		
 		$Dialog.say("*System error: restarting...*", 3)
 		yield(self, "next")
-		var _err = get_tree().change_scene("res://scenes/Levels/Level1.tscn")
+		var _err = get_tree().change_scene("res://scenes/Levels/Level3.tscn")
 
 func _on_Dialog_skiped():
 	skiped = true

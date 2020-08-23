@@ -17,7 +17,7 @@ func _physics_process(_delta): # movement
 	else:
 		$AnimatedSprite.animation = "idle"
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed('ui_mouse_left'): # sets target for movement
 		target = get_global_mouse_position()
 
@@ -27,7 +27,7 @@ func _process(delta):
 		fireball.linear_velocity = get_global_mouse_position() - position
 		get_parent().add_child(fireball)
 
-func _on_Area2D_body_entered(body):
+func _on_Area2D_body_entered(_body):
 	emit_signal("hit")
 
 func death():

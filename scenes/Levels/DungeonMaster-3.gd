@@ -7,17 +7,11 @@ signal next
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Dialog.say("Hello Adventurer...", 4)
+	$Dialog.say("Welcome to your d... . . . *cof cof* stage 3", 5)
 	yield(self, "next")
-	$Dialog.say("Welcome to my dungeon...", 5)
+	$Dialog.say("Here I will test your willpower ", 5)
 	yield(self, "next")
-	$Dialog.say("You problably already know, but I need to follow the protocol... " + 
-	"Here I'll test if you are worthy of taking the secrets of our " +
-	"ancient civilization...", 16)
-	yield(self, "next")
-	$Dialog.say("So, let's start? Use W, A, S, D to get the points " +
-	"you can use the right click to move around and " +
-	"the left click to attack... and remember... make a minefield heheheheh", 16)
+	$Dialog.say("Let start the mur... . fun? ", 5)
 	yield(self, "next")
 	
 	if not skiped:
@@ -25,20 +19,14 @@ func _ready():
 		$"../MusicInfo".start()
 	
 	$Dialog.hide_skip_button()
-	$Dialog.say("Good luck... you'll need it. Heheheh", 5)
-	yield(self, "next")
 
 func _on_MusicPlayer_finished():
 	if not dead:
 		$Dialog.show()
-		$Dialog.say("Congratulations, you finished the tutorial!", 5)
-		yield(self, "next")
-		$Dialog.say("Ready for the next step? And remember, you can press ESC to pause the game", 7)
-		yield(self, "next")
-		$Dialog.say("Ok... let's go!", 3)
+		$Dialog.say("Uh... eh... I was not expecting you to came to far...", 8)
 		yield(self, "next")
 		
-		var _err = get_tree().change_scene("res://scenes/Levels/Level2.tscn")
+		var _err = get_tree().change_scene("res://scenes/Levels/Level4.tscn")
 
 func _on_Player_dead():
 	if not dead:
@@ -47,7 +35,7 @@ func _on_Player_dead():
 		$"../MusicPlayer".stop()
 	
 		$Dialog.show()
-		$Dialog.say("They came in a blink and they go in a blink... what a shame.", 6)
+		$Dialog.say("AHAHAHAHA ONE MORE ONE MORE", 4)
 		yield(self, "next")
 		
 		# feature
@@ -63,10 +51,10 @@ func _on_Player_dead():
 			$Dialog.say("*Gamedev 2: you....*", 3)
 			yield(self, "next")
 			Checkpoint.deaths = 0
-			
+		
 		$Dialog.say("*System error: restarting...*", 3)
 		yield(self, "next")
-		var _err = get_tree().change_scene("res://scenes/Levels/Level1.tscn")
+		var _err = get_tree().change_scene("res://scenes/Levels/Level3.tscn")
 
 func _on_Dialog_skiped():
 	skiped = true

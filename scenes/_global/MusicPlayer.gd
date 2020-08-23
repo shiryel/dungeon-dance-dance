@@ -5,7 +5,7 @@ signal miss
 signal hit
 
 export var velocity = 2
-export var music_jsons = [""]
+export var music_jsons = []
 export (AudioStreamOGGVorbis) var audio_stream
 export var velocity_offset = 0.3 # extra time before start
 export var autoplay = false
@@ -24,7 +24,7 @@ func play():
 
 	# start music
 	current_play_time = -velocity
-	get_tree().create_timer(velocity + velocity_offset).connect("timeout", self, "_play_music")
+	var _err = get_tree().create_timer(velocity + velocity_offset).connect("timeout", self, "_play_music")
 
 func stop():
 	$AudioStreamPlayer.stop()
@@ -42,7 +42,6 @@ func _process(delta):
 		_load_music()
 		_play_notes(delta)
 		_play_game()
-		_verify_stop()
 
 #########
 # UTILS #
@@ -57,10 +56,6 @@ func _find_by_note(list, note):
 ###########
 # playing #
 ###########
-
-func _verify_stop():
-	if music_jsons.empty() and music.empty():
-		$AudioStreamPlayer.stop()
 
 func _load_music():
 	if !music_jsons.empty() and music.empty():
@@ -103,7 +98,7 @@ func _play_game():
 			# press animation
 			get_node(str("NoteEnd/SpritesEnd/", x, "/Sprite")).scale.x = 1.2
 			get_node(str("NoteEnd/SpritesEnd/", x, "/Sprite")).scale.y = 1.2
-			get_tree().create_timer(0.25).connect("timeout", self, str("_reset_sprite_end_", x))
+			var _err = get_tree().create_timer(0.25).connect("timeout", self, str("_reset_sprite_end_", x))
 			
 			# verify if it hit the note
 			var result = _find_by_note(sprite_on, x)
@@ -169,7 +164,7 @@ func _remove_if_any_exited_with_result(result):
 		fadeout.start()
 		
 		# we need to remove from the sprite_on list now because of sync
-		get_tree().create_timer(0.75).connect("timeout", self, "_remove", [result])
+		var _err = get_tree().create_timer(0.75).connect("timeout", self, "_remove", [result])
 		sprite_on.remove(sprite_on.find(result))
 		
 		emit_signal("miss")

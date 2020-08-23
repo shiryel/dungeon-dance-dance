@@ -8,8 +8,10 @@
 [ext_resource path="res://scenes/Player/Fireball.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 7.66673
 
 [sub_resource type="CircleShape2D" id=2]
+radius = 7.5116
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {

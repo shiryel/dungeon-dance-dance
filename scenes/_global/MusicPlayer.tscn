@@ -6,10 +6,10 @@
 [ext_resource path="res://src/edited_sprites/setas/seta1Baixo.png" type="Texture" id=4]
 [ext_resource path="res://src/edited_sprites/setas/seta1Direita.png" type="Texture" id=5]
 [ext_resource path="res://src/edited_sprites/setas/seta2Esquerda.png" type="Texture" id=6]
+[ext_resource path="res://src/musics/hyi - mind breaking the body - 02 you can recover.ogg" type="AudioStream" id=7]
 [ext_resource path="res://src/edited_sprites/setas/seta1Esquerda.png" type="Texture" id=8]
 [ext_resource path="res://src/edited_sprites/setas/seta2Cima.png" type="Texture" id=9]
 [ext_resource path="res://src/edited_sprites/setas/seta2Baixo.png" type="Texture" id=10]
-[ext_resource path="res://src/musics/MEI - M - 02 think of something else.ogg" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.02594, 6.13101 )
@@ -36,6 +36,8 @@ glow_hdr_threshold = 0.12
 [node name="MusicPlayer" type="Node2D"]
 position = Vector2( 403.085, 133.247 )
 script = ExtResource( 1 )
+audio_stream = ExtResource( 7 )
+autoplay = true
 
 [node name="Sprites" type="Node2D" parent="."]
 visible = false
@@ -214,7 +216,7 @@ position = Vector2( 54.1105, 0.47995 )
 shape = SubResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
+stream = ExtResource( 7 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 5 )

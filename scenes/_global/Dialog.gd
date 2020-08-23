@@ -19,20 +19,24 @@ func say(string, time):
 		yield(get_tree().create_timer(2), "timeout")
 	emit_signal("done")
 
+func hide():
+	$Button.hide()
+	$Label.hide()
+
 func hide_skip_button():
 	$Button.hide()
 
 func _put(string):
 	for x in string:
 		if not skiped:
-			get_tree().create_timer(0.07).connect("timeout", self, "_add_char", [x])
+			var _err = get_tree().create_timer(0.07).connect("timeout", self, "_add_char", [x])
 			yield(get_tree().create_timer(0.07), "timeout")
 
 func _add_char(c):
 	$Label.text += c
 
 func _reset():
-	for x in range(5):
+	for _x in range(5):
 		if not skiped:
 			yield(get_tree().create_timer(0.1), "timeout")
 			$Label.visible = false
@@ -41,6 +45,7 @@ func _reset():
 	$Label.text = ""
 
 func _on_Button_pressed():
+	yield(get_tree(), "idle_frame")
 	skiped = true
 	$Label.text = ""
 	$Label.hide()

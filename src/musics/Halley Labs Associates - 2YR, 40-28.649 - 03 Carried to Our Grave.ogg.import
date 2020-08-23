@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Halley Labs Associates - 2YR, 40-28.649 - 03 Carried
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

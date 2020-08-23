@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://src/fonts/Bungee_Shade/BungeeShade-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://src/fonts/Orbitron/static/Orbitron-Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://src/fonts/Orbitron/Orbitron-VariableFont_wght.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://src/musics/MEI - M - 02 think of something else.ogg" type="AudioStream" id=5]
+[ext_resource path="res://scenes/_global/MusicInfo.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 39
@@ -33,6 +34,9 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MusicInfo" parent="." instance=ExtResource( 6 )]
+music_info = "MEI - M - 02 think of something else"
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5

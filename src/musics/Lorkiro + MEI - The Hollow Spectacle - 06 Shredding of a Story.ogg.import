@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Lorkiro + MEI - The Hollow Spectacle - 06 Shredding 
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

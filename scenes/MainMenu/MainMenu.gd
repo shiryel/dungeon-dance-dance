@@ -2,16 +2,16 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var _err = $MusicInfo.start()
 
 func _on_Shiryel_pressed():
-	OS.shell_open("https://twitter.com/shiryel_")
+	var _err = OS.shell_open("https://twitter.com/shiryel_")
 
 func _on_RoxoFoxo_pressed():
-	OS.shell_open("https://twitter.com/RoxoTheFoxo")
+	var _err = OS.shell_open("https://twitter.com/RoxoTheFoxo")
 
 func _on_Play_pressed():
-	get_tree().change_scene("res://scenes/Levels/Level1.tscn")
+	var _err = get_tree().change_scene("res://scenes/Levels/Level1.tscn")
 
 func _on_source_pressed():
-	OS.shell_open("https://github.com/shiryel/dungeon-dance-dance")
+	var _err = OS.shell_open("https://github.com/shiryel/dungeon-dance-dance")

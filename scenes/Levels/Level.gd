@@ -8,10 +8,8 @@ var spawned_mobs = []
 func _ready():
 	$Player.target = $StartingPosition.position
 	randomize()
-	$DungeonMaster.play()
 
-# warning-ignore:unused_argument
-func _process(delta):
+func _process(_delta):
 	for mob in spawned_mobs:
 		if mob == null:
 			spawned_mobs.remove(spawned_mobs.find(mob))
