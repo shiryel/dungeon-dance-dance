@@ -6,11 +6,12 @@
 [ext_resource path="res://src/edited_sprites/setas/seta1Baixo.png" type="Texture" id=4]
 [ext_resource path="res://src/edited_sprites/setas/seta1Direita.png" type="Texture" id=5]
 [ext_resource path="res://src/edited_sprites/setas/seta2Esquerda.png" type="Texture" id=6]
-[ext_resource path="res://src/musics/hyi - mind breaking the body - 02 you can recover.ogg" type="AudioStream" id=7]
+[ext_resource path="res://src/musics/Halley Labs Associates - 2YR, 40-28.649 - 01 Rail Trail.ogg" type="AudioStream" id=7]
 [ext_resource path="res://src/edited_sprites/setas/seta1Esquerda.png" type="Texture" id=8]
 [ext_resource path="res://src/edited_sprites/setas/seta2Cima.png" type="Texture" id=9]
 [ext_resource path="res://src/edited_sprites/setas/seta2Baixo.png" type="Texture" id=10]
 [ext_resource path="res://src/fonts/VT323/VT323-Regular.ttf" type="DynamicFontData" id=11]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.02594, 6.13101 )
