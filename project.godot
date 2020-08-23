@@ -31,7 +31,6 @@ default_bus_layout=""
 [autoload]
 
 Checkpoint="*res://scenes/_global/Checkpoint.gd"
-GamePause="*res://scenes/_global/GamePause.gd"
 
 [gdnative]
 

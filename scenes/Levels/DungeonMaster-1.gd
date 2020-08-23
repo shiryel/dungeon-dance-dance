@@ -37,6 +37,8 @@ func _world_changes():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Checkpoint.current_level = "res://scenes/Levels/Level1.tscn"
+	
 	$Dialog.say("Hello Adventurer...", 4)
 	yield(self, "next")
 	$Dialog.say("Welcome to my dungeon...", 5)

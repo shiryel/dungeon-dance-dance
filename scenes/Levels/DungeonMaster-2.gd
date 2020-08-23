@@ -21,11 +21,11 @@ func _world_changes():
 	tween.start()
 
 func _ready():
-	_world_changes()
+	Checkpoint.current_level = "res://scenes/Levels/Level2.tscn"
 	
-	$Dialog.say("Welcome to stage 2, here I will test your... determination. ", 4)
+	$Dialog.say("Welcome to stage 2, here I will test your... determination. ", 6)
 	yield(self, "next")
-	$Dialog.say("You know... I like adventurers, they come from time to time to visit me ", 5)
+	$Dialog.say("You know... I like adventurers, they come from time to time to visit me ", 7)
 	yield(self, "next")
 	$Dialog.say("Sometimes I make a cake for my visitors... ", 5)
 	yield(self, "next")
@@ -35,6 +35,7 @@ func _ready():
 	if not skiped:
 		$"../MusicPlayer".play()
 		$"../MusicInfo".start()
+		_world_changes()
 	
 	$Dialog.hide_skip_button()
 
@@ -78,6 +79,7 @@ func _on_Dialog_skiped():
 	skiped = true
 	$"../MusicPlayer".play()
 	$"../MusicInfo".start()
+	_world_changes()
 
 func _on_Dialog_done():
 	yield(get_tree(), "idle_frame")

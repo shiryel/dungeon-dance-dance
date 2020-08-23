@@ -228,6 +228,8 @@ func _error_saturation(start, end, time):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Checkpoint.current_level = "res://scenes/Levels/Level4.tscn"
+	
 	$Dialog.say("You... . . .", 5)
 	yield(self, "next")
 	$Dialog.say("DIE!", 5)
@@ -281,7 +283,7 @@ func _on_Player_dead():
 		$"../MusicPlayer".stop()
 	
 		$Dialog.show()
-		$Dialog.say("AHAHAHAHA FINALLY, I FINISHED MORE ONE, HAHAHAHHA", 5)
+		$Dialog.say("AHAHAHAHA I GOT ANOTHER ONE, HAHAHAHHA", 5)
 		yield(self, "next")
 		
 		# feature

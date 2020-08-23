@@ -200,8 +200,8 @@ script = ExtResource( 12 )
 environment = SubResource( 5 )
 [connection signal="dead" from="Hud" to="Player" method="_on_Hud_dead"]
 [connection signal="dead" from="Player" to="DungeonMaster" method="_on_Player_dead"]
-[connection signal="hit" from="Player" to="Hud" method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="Hud" method="_on_Player_hit"]
 [connection signal="finished" from="MusicPlayer" to="DungeonMaster" method="_on_MusicPlayer_finished"]
 [connection signal="miss" from="MusicPlayer" to="." method="_on_MusicPlayer_miss"]
 [connection signal="done" from="DungeonMaster/Dialog" to="DungeonMaster" method="_on_Dialog_done"]
