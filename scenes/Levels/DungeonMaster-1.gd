@@ -5,6 +5,36 @@ var dead = false
 
 signal next
 
+func _world_changes():
+	var tween = Tween.new()
+	add_child(tween)
+	
+	var tween2 = Tween.new()
+	add_child(tween2)
+	
+	var _err = yield(get_tree().create_timer(30), "timeout")
+	
+	tween.interpolate_property($WorldEnvironment.environment, "adjustment_brightness", 
+		$WorldEnvironment.environment.adjustment_brightness, 1.2, 60,
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	tween.start()
+	
+	tween2.interpolate_property($WorldEnvironment.environment, "adjustment_saturation", 
+		$WorldEnvironment.environment.adjustment_saturation, 0.01, 60,
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	tween2.start()
+	
+	_err = yield(get_tree().create_timer(60), "timeout")
+	tween.interpolate_property($WorldEnvironment.environment, "adjustment_brightness", 
+		$WorldEnvironment.environment.adjustment_brightness, 0.9, 60,
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	tween.start()
+	
+	tween2.interpolate_property($WorldEnvironment.environment, "adjustment_saturation", 
+		$WorldEnvironment.environment.adjustment_saturation, 1, 60,
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	tween2.start()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Dialog.say("Hello Adventurer...", 4)
@@ -23,6 +53,7 @@ func _ready():
 	if not skiped:
 		$"../MusicPlayer".play()
 		$"../MusicInfo".start()
+		_world_changes()
 	
 	$Dialog.hide_skip_button()
 	$Dialog.say("Good luck... you'll need it. Heheheh", 5)
@@ -72,6 +103,7 @@ func _on_Dialog_skiped():
 	skiped = true
 	$"../MusicPlayer".play()
 	$"../MusicInfo".start()
+	_world_changes()
 
 func _on_Dialog_done():
 	yield(get_tree(), "idle_frame")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/Levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/_global/ScreenShake.tscn" type="PackedScene" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://scenes/_global/Dialog.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/_global/Mob.tscn" type="PackedScene" id=11]
 
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 
@@ -23,6 +26,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 0/region = Rect2( 160, 272, 16, 16 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
+0/occluder = SubResource( 4 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -99,6 +103,14 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 80, 112, 0, 0, 0, 0, 112, 112, 0, 0, 0, 0, 112, 80, 0, 0, 0, 0, 912, 80, 0, 0, 0, 0, 912, 112, 0, 0, 0, 0, 944, 112, 0, 0, 0, 0, 944, 496, 0, 0, 0, 0, 912, 496, 0, 0, 0, 0, 912, 528, 0, 0, 0, 0, 112, 528, 0, 0, 0, 0, 112, 496, 0, 0, 0, 0, 80, 496, 0, 0, 0, 0, 80, 112 )
 }
 
+[sub_resource type="Environment" id=6]
+background_mode = 4
+glow_enabled = true
+glow_levels/2 = true
+glow_levels/5 = false
+adjustment_enabled = true
+adjustment_brightness = 0.81
+
 [node name="Entrance" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
@@ -170,6 +182,12 @@ autoplay = false
 script = ExtResource( 9 )
 
 [node name="Dialog" parent="DungeonMaster" instance=ExtResource( 10 )]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="DungeonMaster"]
+environment = SubResource( 6 )
+__meta__ = {
+"_editor_description_": ""
+}
 [connection signal="dead" from="Player" to="DungeonMaster" method="_on_Player_dead"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="hit" from="Player" to="Hud" method="_on_Player_hit"]

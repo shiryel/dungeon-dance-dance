@@ -5,8 +5,24 @@ var dead = false
 
 signal next
 
-# Called when the node enters the scene tree for the first time.
+func _world_changes():
+	var tween = Tween.new()
+	add_child(tween)
+	
+	tween.interpolate_property($WorldEnvironment.environment, "adjustment_contrast", 
+		$WorldEnvironment.environment.adjustment_contrast, 1.4, 60,
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	tween.start()
+	
+	var _err = yield(get_tree().create_timer(60), "timeout")
+	tween.interpolate_property($WorldEnvironment.environment, "adjustment_contrast", 
+		$WorldEnvironment.environment.adjustment_contrast, 1, 60,
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	tween.start()
+
 func _ready():
+	_world_changes()
+	
 	$Dialog.say("Welcome to stage 2, here I will test your determination ", 4)
 	yield(self, "next")
 	$Dialog.say("You know... I like adventurers, they came time to time to visit me ", 5)

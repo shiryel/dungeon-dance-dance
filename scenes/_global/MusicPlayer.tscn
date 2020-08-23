@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/_global/MusicPlayer.gd" type="Script" id=1]
 [ext_resource path="res://src/edited_sprites/setas/seta2Direita.png" type="Texture" id=2]
@@ -22,16 +22,6 @@ polygon = PoolVector2Array( 6.01778, 3.17168, 5.93435, -2.66825, 0.59499, -2.751
 
 [sub_resource type="OccluderPolygon2D" id=4]
 polygon = PoolVector2Array( -2.89959, 6.25849, 3.19062, 6.17507, 3.27405, 1.33627, 5.19288, 1.25284, 5.02603, -1.41684, 0.103806, -5.92192, -4.90184, -1.41684, -4.73499, 1.08599, -2.89959, 1.00256 )
-
-[sub_resource type="Environment" id=5]
-background_mode = 4
-glow_enabled = true
-glow_levels/1 = true
-glow_levels/2 = true
-glow_levels/3 = false
-glow_levels/5 = false
-glow_strength = 0.71
-glow_hdr_threshold = 0.12
 
 [node name="MusicPlayer" type="Node2D"]
 position = Vector2( 403.085, 133.247 )
@@ -80,7 +70,6 @@ scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprites/left"]
-visible = false
 scale = Vector2( 2, 2 )
 occluder = SubResource( 3 )
 
@@ -101,7 +90,6 @@ scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprites/up"]
-visible = false
 scale = Vector2( 2, 2 )
 occluder = SubResource( 4 )
 
@@ -122,7 +110,6 @@ scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprites/down"]
-visible = false
 scale = Vector2( 2, 2 )
 occluder = SubResource( 4 )
 
@@ -217,9 +204,6 @@ shape = SubResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 5 )
 [connection signal="body_entered" from="NoteEnd/SpritesEnd/right" to="." method="_on_right_body_entered"]
 [connection signal="body_exited" from="NoteEnd/SpritesEnd/right" to="." method="_on_right_body_exited"]
 [connection signal="body_entered" from="NoteEnd/SpritesEnd/left" to="." method="_on_left_body_entered"]
