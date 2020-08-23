@@ -263,7 +263,11 @@ func _ready():
 func _on_MusicPlayer_finished():
 	if not dead:
 		$Dialog.show()
-		$Dialog.say("*After the end of the song, you find a chest... It contains a piece of cake and a recipe.*", 10)
+		$Chest.visible = true
+		$Dialog.say("*After the end of the song, you find a chest...*", 8)
+		yield(self, "next")
+		$Chest.animation = "open"
+		$Dialog.say("*It contains a piece of cake and a recipe.*", 7)
 		yield(self, "next")
 		$Dialog.say("*Gamedev 1: ... is this..?*", 7)
 		yield(self, "next")
