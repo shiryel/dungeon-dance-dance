@@ -7,34 +7,224 @@ signal next
 
 
 func _world_changes():
+	var _err
+	var brightness = Tween.new()
+	add_child(brightness)
+	
+	_err = yield(get_tree().create_timer(2), "timeout")
+	
+	brightness.interpolate_property($WorldEnvironment.environment, "adjustment_brightness", 
+		$WorldEnvironment.environment.adjustment_brightness, 1, 15,
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	brightness.start()
+	
+	# 18.5
+	_err = yield(get_tree().create_timer(16.5), "timeout")
+	_error_contrast(1.5, 1, 0.5)
+	
+	# 18.5
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_contrast(2, 1, 0.5)
+	
+	# 22.5
+	_err = yield(get_tree().create_timer(4), "timeout")
+	_error_contrast(2, 1, 0.5)
+	
+	# 23.5
+	_err = yield(get_tree().create_timer(1), "timeout")
+	_error_saturation(1, 0.1, 2)
+	
+	# 25.5
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_saturation(0.1, 1, 1)
+	
+	# 27.5
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_contrast(3, 1, 0.5)
+	
+	# 33
+	_err = yield(get_tree().create_timer(5.5), "timeout")
+	_error_contrast(3, 1, 0.5)
+	
+	# 34
+	_err = yield(get_tree().create_timer(1), "timeout")
+	_error_contrast(3, 1, 0.5)
+	
+	# 38
+	_err = yield(get_tree().create_timer(4), "timeout")
+	_error_contrast(4, 1, 1)
+	
+	# 42
+	_err = yield(get_tree().create_timer(4), "timeout")
+	_error_contrast(6, 1, 0.5)
+	
+	# 43
+	_err = yield(get_tree().create_timer(1), "timeout")
+	_error_contrast(3, 1, 0.5)
+	
+	# 44
+	_err = yield(get_tree().create_timer(1), "timeout")
+	_error_contrast(3, 1, 0.5)
+	
+	# 45
+	_err = yield(get_tree().create_timer(1), "timeout")
+	_error_contrast(3, 1, 0.5)
+	
+	# 46
+	_err = yield(get_tree().create_timer(1), "timeout")
+	_error_contrast(4, 1, 0.5)
+	
+	# 48
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_contrast(6, 1, 0.5)
+	
+	# 50
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_contrast(4, 1, 0.5)
+	
+	# 52
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_contrast(6, 1, 0.5)
+	
+	#57
+	_err = yield(get_tree().create_timer(5), "timeout")
+	_error_saturation(1, 0.01, 3)
+	
+	# 100
+	_err = yield(get_tree().create_timer(43), "timeout")
+	_error_saturation(0.01, 1, 3)
+	
+	# 102
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_contrast(6, 1, 0.5)
+	
+	# 103
+	_err = yield(get_tree().create_timer(1), "timeout")
+	_error_contrast(6, 1, 0.5)
+	
+	# 135
+	_err = yield(get_tree().create_timer(32), "timeout")
+	_error_contrast(7, 1, 0.5)
+	
+	# 137
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_contrast(7, 1, 0.5)
+	
+	# 139
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_contrast(7, 1, 0.5)
+	
+	# 141
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_contrast(7, 1, 0.5)
+	
+	# 143
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_contrast(7, 1, 0.5)
+	
+	# 146
+	_err = yield(get_tree().create_timer(3), "timeout")
+	_error_contrast(8, 1, 0.5)
+	
+	# 148
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_contrast(6, 1, 0.5)
+	
+	# 150
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_contrast(6, 1, 0.5)
+	
+	#152
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_contrast(6, 1, 0.5)
+	
+	#156
+	_err = yield(get_tree().create_timer(4), "timeout")
+	_error_contrast(7, 1, 1)
+	
+	#158
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_contrast(7, 1, 0.5)
+	
+	#159
+	_err = yield(get_tree().create_timer(1), "timeout")
+	_error_contrast(7, 1, 0.5)
+	
+	#161
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_contrast(7, 1, 0.5)
+	
+	#163
+	_err = yield(get_tree().create_timer(2), "timeout")
+	_error_contrast(8, 1, 0.5)
+	
+	#164
+	_err = yield(get_tree().create_timer(1), "timeout")
+	_error_contrast(8, 1, 0.5)
+	
+	#165
+	_err = yield(get_tree().create_timer(1), "timeout")
+	_error_contrast(8, 1, 0.5)
+	
+	#166
+	_err = yield(get_tree().create_timer(1), "timeout")
+	_error_contrast(8, 1, 0.5)
+	
+	#169
+	_err = yield(get_tree().create_timer(3), "timeout")
+	_error_contrast(8, 1, 0.5)
+	
+	#170
+	_err = yield(get_tree().create_timer(1), "timeout")
+	_error_saturation(1, 0.01, 3)
+
+func _error_brightness(start, end, time):
 	var tween = Tween.new()
 	add_child(tween)
 	
-	var tween2 = Tween.new()
-	add_child(tween2)
-	
-	var _err = yield(get_tree().create_timer(30), "timeout")
-	
 	tween.interpolate_property($WorldEnvironment.environment, "adjustment_brightness", 
-		$WorldEnvironment.environment.adjustment_brightness, 1.2, 60,
+		$WorldEnvironment.environment.adjustment_brightness, start, time,
 		Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	tween.start()
 	
-	tween2.interpolate_property($WorldEnvironment.environment, "adjustment_saturation", 
-		$WorldEnvironment.environment.adjustment_saturation, 0.01, 60,
-		Tween.TRANS_SINE, Tween.EASE_IN_OUT)
-	tween2.start()
+	var _err = yield(get_tree().create_timer(time), "timeout")
 	
-	_err = yield(get_tree().create_timer(60), "timeout")
 	tween.interpolate_property($WorldEnvironment.environment, "adjustment_brightness", 
-		$WorldEnvironment.environment.adjustment_brightness, 0.9, 60,
+		$WorldEnvironment.environment.adjustment_brightness, end, time,
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	tween.start()
+
+func _error_contrast(start, end, time):
+	var tween = Tween.new()
+	add_child(tween)
+	
+	tween.interpolate_property($WorldEnvironment.environment, "adjustment_contrast", 
+		$WorldEnvironment.environment.adjustment_contrast, start, time,
 		Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	tween.start()
 	
-	tween2.interpolate_property($WorldEnvironment.environment, "adjustment_saturation", 
-		$WorldEnvironment.environment.adjustment_saturation, 1, 60,
+	var _err = yield(get_tree().create_timer(time), "timeout")
+	
+	tween.interpolate_property($WorldEnvironment.environment, "adjustment_contrast", 
+		$WorldEnvironment.environment.adjustment_contrast, end, time,
 		Tween.TRANS_SINE, Tween.EASE_IN_OUT)
-	tween2.start()
+	tween.start()
+
+func _error_saturation(start, end, time):
+	var tween = Tween.new()
+	add_child(tween)
+	
+	tween.interpolate_property($WorldEnvironment.environment, "adjustment_saturation", 
+		$WorldEnvironment.environment.adjustment_saturation, start, time,
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	tween.start()
+	
+	var _err = yield(get_tree().create_timer(time), "timeout")
+	
+	tween.interpolate_property($WorldEnvironment.environment, "adjustment_saturation", 
+		$WorldEnvironment.environment.adjustment_saturation, end, time,
+		Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	tween.start()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
