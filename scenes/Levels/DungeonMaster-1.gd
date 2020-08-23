@@ -64,7 +64,7 @@ func _on_MusicPlayer_finished():
 		$Dialog.show()
 		$Dialog.say("Congratulations, you finished the tutorial!", 5)
 		yield(self, "next")
-		$Dialog.say("Ready for the next step? And remember, you can press ESC to pause the game", 7)
+		$Dialog.say("Ready for the next step? Oh, and I almost forgot, you can press ESC at any time to pause the game", 7)
 		yield(self, "next")
 		$Dialog.say("Ok... let's go!", 3)
 		yield(self, "next")
@@ -83,15 +83,15 @@ func _on_Player_dead():
 		
 		# feature
 		if Checkpoint.deaths > 5:
-			$Dialog.say("*Gamedev 1: hey, pssss, I was seeing you, and look that you are having a bad time...*", 10)
+			$Dialog.say("*Gamedev 1: Hey, pssss, I was watching you, and I noticed that you are having a bad time...*", 10)
 			yield(self, "next")
-			$Dialog.say("*Gamedev 1: so here goes a hint: try to keep the right button pressed while spamming the left button of the mouse*", 14)
+			$Dialog.say("*Gamedev 1: So here goes a hint: try to keep the right button pressed while spamming the left button of the mouse*", 14)
 			yield(self, "next")
-			$Dialog.say("*Gamedev 2: hey, that is a bug!*", 5)
+			$Dialog.say("*Gamedev 2: Hey, wait a second, that's a bug!*", 5)
 			yield(self, "next")
-			$Dialog.say("*Gamedev 1: nop, I promoved it to a feature :P*", 6)
+			$Dialog.say("*Gamedev 1: Nope, I promoted it to a feature :P*", 6)
 			yield(self, "next")
-			$Dialog.say("*Gamedev 2: you....*", 3)
+			$Dialog.say("*Gamedev 2: You...*", 3)
 			yield(self, "next")
 			Checkpoint.deaths = 0
 			

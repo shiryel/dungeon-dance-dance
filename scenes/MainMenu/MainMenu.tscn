@@ -35,6 +35,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -14.0
+margin_top = -13.0
+margin_right = 1043.0
+margin_bottom = 615.0
+color = Color( 0.0588235, 0.0392157, 0.133333, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="MusicInfo" parent="." instance=ExtResource( 6 )]
 music_info = "MEI - M - 02 think of something else"
 
@@ -48,7 +58,7 @@ margin_top = -262.209
 margin_right = 183.646
 margin_bottom = -87.2094
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 0.545098, 0.545098, 1 )
+custom_colors/font_color = Color( 0.858824, 0.341176, 0.968627, 1 )
 custom_constants/line_spacing = 10
 text = "Dungeon 
 Dance Dance"
@@ -128,7 +138,7 @@ __meta__ = {
 }
 
 [node name="Play" type="Button" parent="."]
-modulate = Color( 1, 0.811765, 0.811765, 1 )
+modulate = Color( 0.737255, 0.419608, 0.752941, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

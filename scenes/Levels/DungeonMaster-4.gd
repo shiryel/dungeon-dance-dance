@@ -38,7 +38,7 @@ func _world_changes():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Dialog.say("you... . . .", 5)
+	$Dialog.say("You... . . .", 5)
 	yield(self, "next")
 	$Dialog.say("DIE!", 5)
 	yield(self, "next")
@@ -71,15 +71,15 @@ func _ready():
 func _on_MusicPlayer_finished():
 	if not dead:
 		$Dialog.show()
-		$Dialog.say("*after winning, you find a chest... It contains a piece of cake and the recipe*", 10)
+		$Dialog.say("*After the end of the song, you find a chest... It contains a piece of cake and a recipe.*", 10)
 		yield(self, "next")
-		$Dialog.say("*gamedev 1: ... it is this?*", 7)
+		$Dialog.say("*Gamedev 1: ... is this..?*", 7)
 		yield(self, "next")
-		$Dialog.say("*gamedev 2: ... we dont have much more time you know?*", 8)
+		$Dialog.say("*Gamedev 2: ... we dont have much more time you know?*", 8)
 		yield(self, "next")
-		$Dialog.say("*gamedev 2: oh ok... *sad fennec noises* *", 8)
+		$Dialog.say("*Gamedev 2: Oh ok... *Sad fennec noises* *", 8)
 		yield(self, "next")
-		$Dialog.say("*gamedev 1: Yes you can close the game now!*", 7)
+		$Dialog.say("*Gamedev 1: Yes you can close the game now!*", 7)
 		yield(self, "next")
 		
 		var _err = get_tree().change_scene("res://scenes/MainMenu/MainMenu.tscn")
@@ -96,15 +96,15 @@ func _on_Player_dead():
 		
 		# feature
 		if Checkpoint.deaths > 5:
-			$Dialog.say("*Gamedev 1: hey, pssss, I was seeing you, and look that you are having a bad time...*", 10)
+			$Dialog.say("*Gamedev 1: Hey, pssss, I was watching you, and I noticed that you are having a bad time...*", 10)
 			yield(self, "next")
-			$Dialog.say("*Gamedev 1: so here goes a hint: try to keep the right button pressed while spamming the left button of the mouse*", 14)
+			$Dialog.say("*Gamedev 1: So here goes a hint: try to keep the right button pressed while spamming the left button of the mouse*", 14)
 			yield(self, "next")
-			$Dialog.say("*Gamedev 2: hey, that is a bug!*", 5)
+			$Dialog.say("*Gamedev 2: Hey, wait a second, that's a bug!*", 5)
 			yield(self, "next")
-			$Dialog.say("*Gamedev 1: nop, I promoved it to a feature :P*", 6)
+			$Dialog.say("*Gamedev 1: Nope, I promoted it to a feature :P*", 6)
 			yield(self, "next")
-			$Dialog.say("*Gamedev 2: you....*", 3)
+			$Dialog.say("*Gamedev 2: You...*", 3)
 			yield(self, "next")
 			Checkpoint.deaths = 0
 		
