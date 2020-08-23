@@ -34,7 +34,7 @@ Checkpoint="*res://scenes/_global/Checkpoint.gd"
 
 [debug]
 
-settings/stdout/print_fps=true
+gdscript/warnings/enable=false
 
 [display]
 
