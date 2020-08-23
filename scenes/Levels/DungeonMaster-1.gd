@@ -63,10 +63,11 @@ func _ready():
 
 func _on_MusicPlayer_finished():
 	if not dead:
+		Checkpoint.current_level = "res://scenes/Levels/Level2.tscn"
 		$Dialog.show()
 		$Dialog.say("Congratulations, you finished the tutorial!", 5)
 		yield(self, "next")
-		$Dialog.say("Ready for the next step? Oh, and I almost forgot, you can press ESC at any time to pause the game", 12)
+		$Dialog.say("Ready for the next step? Oh, and I almost forgot, you can press ESC at any time to \"pause\" the game", 12)
 		yield(self, "next")
 		$Dialog.say("Ok... let's go!", 3)
 		yield(self, "next")

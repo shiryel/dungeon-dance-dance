@@ -55,6 +55,7 @@ func _ready():
 
 func _on_MusicPlayer_finished():
 	if not dead:
+		Checkpoint.current_level = "res://scenes/Levels/Level4.tscn"
 		$Dialog.show()
 		$Dialog.say("Uh... eh... I wasn't expecting you to get so far...", 8)
 		yield(self, "next")
