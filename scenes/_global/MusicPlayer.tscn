@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/_global/MusicPlayer.gd" type="Script" id=1]
 [ext_resource path="res://src/edited_sprites/setas/seta2Direita.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://src/edited_sprites/setas/seta1Esquerda.png" type="Texture" id=8]
 [ext_resource path="res://src/edited_sprites/setas/seta2Cima.png" type="Texture" id=9]
 [ext_resource path="res://src/edited_sprites/setas/seta2Baixo.png" type="Texture" id=10]
+[ext_resource path="res://src/fonts/VT323/VT323-Regular.ttf" type="DynamicFontData" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.02594, 6.13101 )
@@ -22,6 +23,19 @@ polygon = PoolVector2Array( 6.01778, 3.17168, 5.93435, -2.66825, 0.59499, -2.751
 
 [sub_resource type="OccluderPolygon2D" id=4]
 polygon = PoolVector2Array( -2.89959, 6.25849, 3.19062, 6.17507, 3.27405, 1.33627, 5.19288, 1.25284, 5.02603, -1.41684, 0.103806, -5.92192, -4.90184, -1.41684, -4.73499, 1.08599, -2.89959, 1.00256 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 17
+font_data = ExtResource( 11 )
 
 [node name="MusicPlayer" type="Node2D"]
 position = Vector2( 403.085, 133.247 )
@@ -204,6 +218,50 @@ shape = SubResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+
+[node name="MissesLabel" type="Label" parent="."]
+margin_left = 246.556
+margin_top = 402.979
+margin_right = 295.556
+margin_bottom = 419.979
+custom_fonts/font = SubResource( 5 )
+text = "Misses:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Misses" type="Label" parent="."]
+margin_left = 294.5
+margin_top = 402.5
+margin_right = 336.5
+margin_bottom = 419.5
+custom_fonts/font = SubResource( 6 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="."]
+margin_left = 295.0
+margin_top = 389.0
+margin_right = 344.0
+margin_bottom = 406.0
+custom_fonts/font = SubResource( 7 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PointsLabel" type="Label" parent="."]
+margin_left = 240.332
+margin_top = 386.49
+margin_right = 289.332
+margin_bottom = 404.49
+custom_fonts/font = SubResource( 8 )
+text = "Points:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="NoteEnd/SpritesEnd/right" to="." method="_on_right_body_entered"]
 [connection signal="body_exited" from="NoteEnd/SpritesEnd/right" to="." method="_on_right_body_exited"]
 [connection signal="body_entered" from="NoteEnd/SpritesEnd/left" to="." method="_on_left_body_entered"]

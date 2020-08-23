@@ -30,7 +30,7 @@ func _process(_delta):
 func _on_Area2D_body_entered(_body):
 	emit_signal("hit")
 
-func death():
+func _on_Hud_dead():
 	$AnimatedSprite.hide()
 	emit_signal("dead")
 	speed = 0 # the player can't move while dead (meio gambiarra)

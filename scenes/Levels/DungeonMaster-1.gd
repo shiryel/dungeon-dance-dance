@@ -43,11 +43,11 @@ func _ready():
 	yield(self, "next")
 	$Dialog.say("You problably already know, but I need to follow the protocol... " + 
 	"Here I'll test if you are worthy of taking the secrets of our " +
-	"ancient civilization...", 16)
+	"ancient civilization...", 17)
 	yield(self, "next")
 	$Dialog.say("So, let's start? Use W, A, S, D to get the points " +
 	"you can use the right click to move around and " +
-	"the left click to attack... and remember... make a minefield heheheheh", 16)
+	"the left click to attack... and remember... make a minefield heheheheh", 18)
 	yield(self, "next")
 	
 	if not skiped:
@@ -64,7 +64,7 @@ func _on_MusicPlayer_finished():
 		$Dialog.show()
 		$Dialog.say("Congratulations, you finished the tutorial!", 5)
 		yield(self, "next")
-		$Dialog.say("Ready for the next step? Oh, and I almost forgot, you can press ESC at any time to pause the game", 7)
+		$Dialog.say("Ready for the next step? Oh, and I almost forgot, you can press ESC at any time to pause the game", 12)
 		yield(self, "next")
 		$Dialog.say("Ok... let's go!", 3)
 		yield(self, "next")

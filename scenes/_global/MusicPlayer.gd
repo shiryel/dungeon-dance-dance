@@ -168,8 +168,10 @@ func _remove_if_any_exited_with_result(result):
 		sprite_on.remove(sprite_on.find(result))
 		
 		emit_signal("miss")
+		$Misses.text = str(int($Misses.text) + 1)
 	else:
 		emit_signal("hit")
+		$Points.text = str(int($Points.text) + 1)
 
 func _remove(result):
 	result.body.queue_free()
