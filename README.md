@@ -1,5 +1,8 @@
 # Dungeon Dance Dance
 
+[![Code License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Asset License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 [![Twitter](https://img.shields.io/twitter/follow/shiryel_.svg?style=social)](https://twitter.com/shiryel_)
 [![Twitter](https://img.shields.io/twitter/follow/RoxoTheFoxo.svg?style=social)](https://twitter.com/RoxoTheFoxo)
 
@@ -11,6 +14,6 @@ You are a mage, a mage who has the ability to cast fireballs, but is also quite 
 
 ### :zap: [Visit here](https://shiryel.itch.io/dungeon-dance-dance)
 
-## LICENSES
-[![Code License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Asset License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+![Menu](/imgs/menu.png)
+
+![Battle](/imgs/battle.png)
