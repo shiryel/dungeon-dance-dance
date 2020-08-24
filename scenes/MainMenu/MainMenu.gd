@@ -5,8 +5,10 @@ func _ready():
 	var _err = $MusicInfo.start()
 	if Checkpoint.current_level == "":
 		$Play.text = "Play"
+		$AudioStreamPlayer.play()
 	else:
 		$Play.text = "Continue"
+		$AudioStreamPlayer.stop()
 
 func _on_Shiryel_pressed():
 	var _err = OS.shell_open("https://twitter.com/shiryel_")

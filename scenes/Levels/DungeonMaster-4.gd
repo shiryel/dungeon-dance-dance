@@ -278,6 +278,8 @@ func _on_MusicPlayer_finished():
 		$Dialog.say("*Gamedev 1: Yes you can close the game now!*", 7)
 		yield(self, "next")
 		
+		Checkpoint.current_level = ""
+		
 		var _err = get_tree().change_scene("res://scenes/MainMenu/MainMenu.tscn")
 
 func _on_Player_dead():

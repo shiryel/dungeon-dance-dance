@@ -11,5 +11,5 @@ dest_files=[ "res://.import/MEI - M - 02 think of something else.ogg-2a36791ef8c
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
